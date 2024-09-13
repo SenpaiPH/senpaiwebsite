@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generate Random Email</title>
+	<style>
+		body {
+ font-family: Arial, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<h1>Generate Random Email</h1>
+	<input type="text" id="inputField" value="" readonly>
+	<button onclick="generateMailbox()">Generate Mailbox</button>
+	
+	<script>
+		function generateMailbox() {
+			fetch('https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1')
+				.then(response => response.json())
+				.then(data => {
+					document.getElementById('inputField').value = data[0];
+				})
+				.catch(error => console.error('Error:', error));
+		}
+	</script>
+</body>
+</html>
