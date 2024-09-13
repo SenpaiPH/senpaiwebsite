@@ -4,14 +4,43 @@
 	<title>Generate Random Email</title>
 	<style>
 		body {
- font-family: Arial, sans-serif;
+			font-family: Arial, sans-serif;
+			text-align: center; /* center the content */
+		}
+		
+		/* add design to the button */
+		button {
+			background-color: #4CAF50; /* green background */
+			color: #ffffff; /* white text */
+			padding: 10px 20px; /* add some padding */
+			border: none; /* remove border */
+			border-radius: 5px; /* add rounded corners */
+			cursor: pointer; /* change cursor on hover */
+		}
+		
+		button:hover {
+			background-color: #3e8e41; /* darker green on hover */
+		}
+		
+		/* make the input field and button responsive */
+		.input-field {
+			width: 50%; /* take 50% of the parent width */
+			margin: 20px auto; /* add some margin and center */
+		}
+		
+		@media only screen and (max-width: 600px) {
+			.input-field {
+				width: 80%; /* take 80% of the parent width on smaller screens */
+			}
 		}
 	</style>
 </head>
 <body>
 	<h1>Generate Random Email</h1>
-	<input type="text" id="inputField" value="" readonly>
-	<button onclick="generateMailbox()">Generate Mailbox</button>
+	<div class="input-field">
+		<input type="text" id="inputField" value="" readonly>
+		<button onclick="generateMailbox()">Generate Mailbox</button>
+	</div>
 	
 	<script>
 		function generateMailbox() {
